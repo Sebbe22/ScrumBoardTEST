@@ -1,0 +1,28 @@
+﻿@page
+@model ScrumBoard.Pages.UserStories.IndexModel
+@{
+}
+
+<h1>
+    User Stories
+</h1>
+
+
+    @foreach (var us in @Model.UserStories)
+     {
+        <div class="card mb-2">
+            <div class="card-footer">
+                <a class="btn" type="button" asp-page="DeleteUserStory" asp-route-id="@us.Id"><i class="fa fa-trash"></i></a>
+            </div>
+                <div class="card-header p-2">
+                    <h5 class="card-title">
+                        @us.Id @us.Title
+                    </h5>
+                </div>
+                <div class="card-body p-2">
+                    <p class="card-text">
+                        @us.Description
+                    </p>
+                </div>
+        </div>
+     }
